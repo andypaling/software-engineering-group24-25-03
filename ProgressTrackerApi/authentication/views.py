@@ -21,7 +21,6 @@ class RegisterUser(GenericAPIView):
     def post(self, request):
         user_serializer = self.get_serializer(data=request.data)
         user_serializer.is_valid(raise_exception=True)
-        #user = user_serializer.save()
         first_name = user_serializer.validated_data['first_name']
         last_name = user_serializer.validated_data['last_name']
         username = user_serializer.validated_data['username']
